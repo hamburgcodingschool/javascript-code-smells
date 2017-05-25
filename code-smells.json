@@ -1,0 +1,90 @@
+[
+  {
+    "id": "duplicated-code",
+    "name": "Duplicated Code"
+  },
+  {
+    "id": "long-method",
+    "name": "Long Method"
+  },
+  {
+    "id": "large-class",
+    "name": "Large Class"
+  },
+  {
+    "id": "long-parameter-list",
+    "name": "Long Parameter List"
+  },
+  {
+    "id": "divergent-change",
+    "name": "Divergent Change"
+  },
+  {
+    "id": "shotgun-surgery",
+    "name": "Shotgun Surgery"
+  },
+  {
+    "id": "feature-envy",
+    "name": "Feature Envy"
+  },
+  {
+    "id": "data-clumps",
+    "name": "Data Clumps"
+  },
+  {
+    "id": "primitive-obsession",
+    "name": "Primitive Obsession"
+  },
+  {
+    "id": "switch-statements",
+    "name": "Switch Statements"
+  },
+  {
+    "id": "parallel-inheritance-hierarchies",
+    "name": "Parallel Inheritance Hierarchies"
+  },
+  {
+    "id": "lazy-class",
+    "name": "Lazy Class"
+  },
+  {
+    "id": "speculative-generality",
+    "name": "Speculative Generality"
+  },
+  {
+    "id": "temporary-file",
+    "name": "Temporary Field"
+  },
+  {
+    "id": "message-chains",
+    "name": "Message Chains"
+  },
+  {
+    "id": "middle-man",
+    "name": "Middle Man"
+  },
+  {
+    "id": "inappropriate-intimacy",
+    "name": "Inappropriate Intimacy"
+  },
+  {
+    "id": "alternative-classes-with-different-interfaces",
+    "name": "Alternative Classes with Different Interfaces"
+  },
+  {
+    "id": "incomplete-library-class",
+    "name": "Incomplete Library Class"
+  },
+  {
+    "id": "data-class",
+    "name": "Data Class"
+  },
+  {
+    "id": "refused-bequest",
+    "name": "Refused Bequest"
+  },
+  {
+    "id": "comments",
+    "name": "Comments"
+  }
+]
