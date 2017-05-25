@@ -16,7 +16,7 @@ $("#search-button").click(function() {
         var indexOf = name.toLowerCase().search(search_text.toLowerCase());
         console.log(indexOf);
         if (name.toLowerCase().search(search_text.toLowerCase()) >= 0) {
-            items.push( "<a id='smell-" + i + "' href='#' class='list-group-item'>" + name + "</li>" );
+            items.push( "<a id='smell-" + i + "' href='code-smells.html?smell=" + value.id + "' class='list-group-item'>" + name + "</li>" );
             console.log("match: " + name);
         }
       });
@@ -28,3 +28,32 @@ $("#search-button").click(function() {
         }).appendTo( "#smells" );
     });
 });
+
+$(document).ready(function() {
+    var smell = getUrlVars()["smell"];
+    var page = "content/" + smell + ".txt";
+    console.log("Page: " + page);
+    $.getJSON("code-smells.json", function(data) {
+        $.each(data, function(i, value) {
+            if (value.id == smell) {
+                console.log("Name: " + value.name);
+                $("#title").text(value.name);
+            }
+        });
+    });
+    $("#content").load(page);
+});
+
+// Read the page's GET URL variables and return them as an associative array.
+function getUrlVars()
+{
+    var vars = [], hash;
+    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+    for(var i = 0; i < hashes.length; i++)
+    {
+        hash = hashes[i].split('=');
+        vars.push(hash[0]);
+        vars[hash[0]] = hash[1];
+    }
+    return vars;
+}

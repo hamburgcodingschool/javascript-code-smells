@@ -1,0 +1,2 @@
+This smell occurs when a programmer uses primitives to represent a concept in the program rather than creating a small class for it instead. Creating a class to represent a concept means that you can add behavior to it and group several data items together that belong together.
+If this occurs, you should Replace Data Value with Object or if there are several fields that should go together you should use the refactoring Extract Class.

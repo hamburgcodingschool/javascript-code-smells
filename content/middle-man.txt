@@ -1,0 +1,1 @@
+In object oriented programming, it is common to delegate some work to other objects. However, if a class delegates the majority of work to another class, it is just a middle man and should be removed. Instead, you should talk directly to the class that implements the behavior rather than going through the middle man.

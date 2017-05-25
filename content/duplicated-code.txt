@@ -1,0 +1,3 @@
+Duplicated code is the smelliest of the code smells. The book Refactoring Martin Fowler 1999 states that: "If you see the same code structure in more than one place, you can be sure that your program will be better if you find a way to unify them." Martin Fowler 1999 states that the simplest duplicated code problem is when you have the same expression in two methods of the same class.
+It is worth noting that occasionally what appears to be duplicated code is actually two different behaviours that will eventually evolve in different directions.
+Apply Extract Method.

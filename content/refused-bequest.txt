@@ -1,0 +1,4 @@
+Subclasses inherit all the methods and data from their superclass. If a subclass doesn't want to use the stuff it inherits, this can be an indication that the class hierarchy is wrong. It can also indicate that you shouldn't be subclassing. Inheritance for implementation is a classic case where the subclass doesn't really want to use the stuff it inherits.
+In some cases, a class overrides methods with no-ops which can be an indication that it is refusing the bequest of its superclasses and that you have the inheritance hierarchy wrong.
+Fowler however notes that refused bequest often isn't a strong smell and can be overlooked in some cases unless it is causing problems and confusion.
+This may be seen in the Composite pattern where the leaf has no-op methods.

@@ -1,0 +1,2 @@
+The feature envy smell is present when a class or a method or methods from that class use methods from another class excessively, in particular if a method seems more 'interested' in another class than its own. The most common focus of the envy is the data. This is a good sign that some refactoring should be applied.
+Discretion still needs to be applied since particular library methods may get used a lot, but this doesn't necessarily mean we should try to refactor around this.

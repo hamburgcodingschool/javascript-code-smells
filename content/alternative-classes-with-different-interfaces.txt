@@ -1,0 +1,1 @@
+This smell occurs when two methods in different classes do the same thing but have a different method signature. You should try to Rename Methods that do the same thing in a consistent way. However, often there is a deeper problem where two classes are doing something very similar. You could try to Move Methods around or extract the common behavior into a common superclass.

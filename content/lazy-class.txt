@@ -1,0 +1,2 @@
+A lazy class is simply a class that doesn't do enough. This might happen when a class that used to do work gets downsized during refactoring or when a class is added in anticipation of a future need that never eventuates.
+Most of the time, a lazy class should simply be eliminated from the system. If the class that's lazy is a subclass, you can try to Collapse Hierarchy. In some cases, you can turn a lazy class into an Inline Class.

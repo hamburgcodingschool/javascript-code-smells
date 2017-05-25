@@ -1,0 +1,3 @@
+This code smell describes a situation where people develop a class with all sorts of hooks and special cases just so it will handle things that might be required in the future but not at this stage. The resulting class is often harder to understand and maintain than if it only tried to handle the things that were actually required.
+Speculative generality can usually be spotted when the only users of a method are test cases. Such methods should be removed unless it contains functionality that is needed by other parts of the system.
+This code smell is inline with You ain't gonna need it in that it says that you shouldn't develop functionality unless you need it.

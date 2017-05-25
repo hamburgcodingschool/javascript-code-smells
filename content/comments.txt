@@ -1,0 +1,2 @@
+This smell does not say that you shouldn't use comments. However, it does say that developers should be wary of code that is heavily commented. If you need to add a lot of comments to your code to explain it, this indicates that the code is too complicated and should be simplified.
+In Martin Fowler 1999, Fowler says "When you feel the need to write a comment, first try to refactor the code so that any comment becomes superfluous". This often means using Extract Method and Introduce Assertion.

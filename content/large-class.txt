@@ -1,0 +1,2 @@
+"A class with too much code is prime breeding ground for duplicated code, chaos, and death." - Refactoring Martin Fowler 1999
+Refactoring Martin Fowler 1999 states that: When a class is trying to do too much, it often shows up as too many instance variables. When a class has too many instance variables, duplicated code cannot be far behind.

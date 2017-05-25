@@ -1,0 +1,2 @@
+"Shotgun Surgery" refers to a change to one piece of code resulting in the need to change many other pieces of code. For instance, if you change the format of your XML, this should require only one change to the code (in the parser). If you need to change the code in several places, then you're probably not abstracting/layering your parsing code properly, and you need to strongly consider refactoring.
+This contrasts with the Divergent change smell, where many unrelated changes take place in a single class.

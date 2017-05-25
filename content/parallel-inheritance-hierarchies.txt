@@ -1,0 +1,6 @@
+This smell is related to the Parallel hierarchies problem.
+The parallel hierarchies problem is when you have two parallel inheritance hierarchies associated by composition. Fig.1. The problem exists only if there are restriction on the interaction of the objects as in the example below.
+
+You need to have a Vehicle hierarchy for different vehicles, and an Operator hierarchy for different Operators of Vehicles. In this case the Operator is stored in the abstract Vehicle class. If there are restrictions on which operators can use which vehicles then it is possible that a Plane class could be given a Driver operator, which is obviously invalid.
+This problem cannot be completely avoided, but you can structure it in the best possible way by using the Intelligent children pattern and the Defer identification of state variables pattern (which are closely related).
+A solution to the Vehicle-Operator parallel hierarchies problem example can be found at Intelligent children pattern.

@@ -1,0 +1,5 @@
+"Object programs live best and longest with short methods. The payoffs of indirection - explanation, sharing and choosing - are supported by little methods. Everybody knows short is good." (1)
+The Long method code smell is a sign that you possibly need to take some part of related functionality in your method and create a new method to hold this functionality. This action is known as Extract Method
+Comments in your method are sometimes a good sign that you need to extract the block of code that has been commented into a new method whose name describes the functionality that the comment was originally describing. Even if a single line of code requires explanation then it is probably worth extracting it into a new method. (1)
+
+(1) Bad Smells in Code - A Summary of Martin Fowler's Code Smell Chapter in "Refactoring"

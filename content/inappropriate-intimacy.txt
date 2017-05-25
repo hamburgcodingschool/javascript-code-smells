@@ -1,0 +1,3 @@
+Sometimes classes become too intimate and spend too much time touching each other's private parts or fields. This is bad because it breaches encapsulation and Information hiding.
+If a class is more interested in the internals of another class, this can indicate that related data and behavior is not put in one place. Therefore, intimate classes should be refactored by moving the methods and fields in such a way that related data and behavior is put together and there is no need for a class to look at another class' internals.
+Subclasses in particular are often very intimate with their parent classes though proponents of object encapsulation would argue that that is appropriate.

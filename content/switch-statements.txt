@@ -1,0 +1,6 @@
+One of the benefits of Object oriented design is the reduction in the need for switch statements. These can take the form of many if statements or, with better procedural style, a case statement. These statements tend to be repeated throughout the code. If they exist maintenance and editing or extending tend to be difficult.
+If there is a switch statement smell it is an indication that refactoring is necessary. There are several different situations that will bring about the switch statement smell and each one has a different solution as documented by Martin Fowler 1999.
+As explained by Fowler the solution to the switch statement problem is to use polymorphism.
+
+The Type Switch:
+If the type of an object is being checked to see what process should be applied the solution is to apply Extract Method and then Move Method.
