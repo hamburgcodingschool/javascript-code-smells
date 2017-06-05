@@ -22,10 +22,14 @@ function search(query, callback) {
 
 function findMatchingSmells(query, data, results) {
     $.each(data, function(i, smell) {
-        if (smell.name.toLowerCase().search(query.toLowerCase()) >= 0) {
+        if (matches(smell, query)) {
             results.push(smell);
         }
     });
+}
+
+function matches(smell, query) {
+    return smell.name.toLowerCase().search(query.toLowerCase()) >= 0;
 }
 
 function makeList(smells) {
