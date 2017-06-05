@@ -17,13 +17,13 @@ function search(query, callback) {
     $.getJSON("code-smells.json", function(data) {
         var results = [];
         $.each(data, function(i, value) {
-            getMatchingSmells(query, value, results);
+            addToResultsIfMatch(query, value, results);
         });
         callback(results);
     });
 }
 
-function getMatchingSmells(query, smell, results) {
+function addToResultsIfMatch(query, smell, results) {
     if (smell.name.toLowerCase().search(query.toLowerCase()) >= 0) {
         results.push(smell);
     }
