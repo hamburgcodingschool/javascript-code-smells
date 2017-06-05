@@ -15,17 +15,17 @@ $("#search-button").click(function() {
 function search(query, callback) {
     $.getJSON("code-smells.json", function(data) {
         var results = [];
-        $.each(data, function(i, value) {
-            addToResultsIfMatch(query, value, results);
-        });
+        findMatchingSmells(query, data, results);
         callback(results);
     });
 }
 
-function addToResultsIfMatch(query, smell, results) {
-    if (smell.name.toLowerCase().search(query.toLowerCase()) >= 0) {
-        results.push(smell);
-    }
+function findMatchingSmells(query, data, results) {
+    $.each(data, function(i, smell) {
+        if (smell.name.toLowerCase().search(query.toLowerCase()) >= 0) {
+            results.push(smell);
+        }
+    });
 }
 
 function makeList(smells) {
