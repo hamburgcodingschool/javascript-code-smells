@@ -16,9 +16,8 @@ $("#search-button").click(function() {
 function makeList(smells) {
     var list = "";
     for (var i = 0; i < smells.length; i++) {
-        var smell = smells[i];
-        list += "<a id='smell-" + i + "' href='code-smells.html?smell=" + smell.id + "' class='list-group-item'>"
-                + smell.name + "</a>";
+        list += "<a id='smell-" + i + "' href='code-smells.html?smell=" + smells[i].id + "' class='list-group-item'>"
+                + smells[i].name + "</a>";
     }
     return list;
 }
