@@ -24,8 +24,7 @@ function search(query, callback) {
 }
 
 function getMatchingItems(query, smell, items) {
-    var name = smell.name;
-    if (name.toLowerCase().search(query.toLowerCase()) >= 0) {
+    if (smell.name.toLowerCase().search(query.toLowerCase()) >= 0) {
         items.push(smell);
     }
 }
