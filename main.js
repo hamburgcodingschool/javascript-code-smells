@@ -18,13 +18,13 @@ function search(search_text, callback) {
         var items = [];
         $.each(data, function(i, value) {
             var value = data[i];
-            getMatchingItems(value, items);
+            getMatchingItems(search_text, value, items);
         });
         callback(items);
     });
 }
 
-function getMatchingItems(value, items) {
+function getMatchingItems(search_text, value, items) {
     var name = value.name;
     var indexOf = name.toLowerCase().search(search_text.toLowerCase());
     if (name.toLowerCase().search(search_text.toLowerCase()) >= 0) {
