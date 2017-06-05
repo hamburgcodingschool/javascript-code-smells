@@ -5,25 +5,24 @@ $(document).ready(function() {
 
 $("#search-button").click(function() {
     var query = $("#search-input").val();
+    searchSmells();
+});
+
+$("#search-input").keyup(function(event) {
+    if (event.keyCode == 13) {
+        searchSmells()
+    }
+});
+
+function searchSmells() {
+    var query = $("#search-input").val();
     search(query, function(results) {
         $("#smells").empty();
         $("<div/>", {
             html: makeList(results)
         }).appendTo("#smells");
     });
-});
-
-$("#search-input").keyup(function(event) {
-    if (event.keyCode == 13) {
-        var query = $("#search-input").val();
-        search(query, function(results) {
-            $("#smells").empty();
-            $("<div/>", {
-                html: makeList(results)
-            }).appendTo("#smells");
-        });
-    }
-});
+}
 
 function makeList(smells) {
     var list = "";
