@@ -18,14 +18,18 @@ function search(search_text, callback) {
         var items = [];
         $.each(data, function(i, value) {
             var value = data[i];
-            var name = value.name;
-            var indexOf = name.toLowerCase().search(search_text.toLowerCase());
-            if (name.toLowerCase().search(search_text.toLowerCase()) >= 0) {
-                items.push(value);
-            }
+            getMatchingItems(value, items);
         });
         callback(items);
     });
+}
+
+function getMatchingItems(value, items) {
+    var name = value.name;
+    var indexOf = name.toLowerCase().search(search_text.toLowerCase());
+    if (name.toLowerCase().search(search_text.toLowerCase()) >= 0) {
+        items.push(value);
+    }
 }
 
 function makeList(items) {
