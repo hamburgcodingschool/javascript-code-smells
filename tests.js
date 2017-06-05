@@ -12,3 +12,14 @@ QUnit.test("Search for 'class'", function(assert) {
         done();
     });
 });
+
+QUnit.test("Create a tags with makeList()", function(assert) {
+    var items = [];
+    items.push({
+        id: "duplicated-code",
+        name: "Duplicated Code"
+    });
+    console.log(items);
+    var list = makeList(items);
+    assert.equal(list, "<a id='smell-0' href='code-smells.html?smell=duplicated-code' class='list-group-item'>Duplicated Code</a>")
+});
