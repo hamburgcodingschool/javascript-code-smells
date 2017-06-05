@@ -3,8 +3,8 @@ $(document).ready(function() {
 });
 
 $("#search-button").click(function() {
-    var search_text = $("#search-input").val();
-    search(search_text, function(items) {
+    var query = $("#search-input").val();
+    search(query, function(items) {
         var list = makeList(items);
         $("#smells").empty();
         $("<div/>", {
@@ -13,19 +13,19 @@ $("#search-button").click(function() {
     });
 });
 
-function search(search_text, callback) {
+function search(query, callback) {
     $.getJSON("code-smells.json", function(data) {
         var items = [];
         $.each(data, function(i, value) {
-            getMatchingItems(search_text, value, items);
+            getMatchingItems(query, value, items);
         });
         callback(items);
     });
 }
 
-function getMatchingItems(search_text, value, items) {
+function getMatchingItems(query, value, items) {
     var name = value.name;
-    if (name.toLowerCase().search(search_text.toLowerCase()) >= 0) {
+    if (name.toLowerCase().search(query.toLowerCase()) >= 0) {
         items.push(value);
     }
 }
