@@ -5,10 +5,9 @@ $(document).ready(function() {
 $("#search-button").click(function() {
     var query = $("#search-input").val();
     search(query, function(results) {
-        var list = makeList(results);
         $("#smells").empty();
         $("<div/>", {
-            html: list
+            html: makeList(results)
         }).appendTo("#smells");
     });
 });
