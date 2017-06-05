@@ -15,11 +15,11 @@ $("#search-button").click(function() {
 
 function search(query, callback) {
     $.getJSON("code-smells.json", function(data) {
-        var items = [];
+        var results = [];
         $.each(data, function(i, value) {
-            getMatchingSmells(query, value, items);
+            getMatchingSmells(query, value, results);
         });
-        callback(items);
+        callback(results);
     });
 }
 
