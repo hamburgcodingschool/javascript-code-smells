@@ -23,9 +23,9 @@ function search(query, callback) {
     });
 }
 
-function getMatchingItems(query, smell, items) {
+function getMatchingItems(query, smell, results) {
     if (smell.name.toLowerCase().search(query.toLowerCase()) >= 0) {
-        items.push(smell);
+        results.push(smell);
     }
 }
 
