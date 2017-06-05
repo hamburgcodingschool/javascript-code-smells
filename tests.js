@@ -1,6 +1,7 @@
 QUnit.test("Search for 'class'", function(assert) {
     var done = assert.async();
     search("class", function(items) {
+        assert.ok(items.length == 5);
         assert.equal(items[0].name, "Large Class", "The name of the first result should be 'Large Class'");
         assert.equal(items[1].name, "Lazy Class", "The name of the second result should be 'Lazy Class'");
         assert.equal(items[2].name, "Alternative Classes with Different Interfaces",
