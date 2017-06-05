@@ -29,12 +29,12 @@ function getMatchingSmells(query, smell, results) {
     }
 }
 
-function makeList(items) {
+function makeList(smells) {
     var list = [];
-    for (var i = 0; i < items.length; i++) {
-        var value = items[i];
-        list.push("<a id='smell-" + i + "' href='code-smells.html?smell=" + value.id + "' class='list-group-item'>"
-                + value.name + "</a>");
+    for (var i = 0; i < smells.length; i++) {
+        var smell = smells[i];
+        list.push("<a id='smell-" + i + "' href='code-smells.html?smell=" + smell.id + "' class='list-group-item'>"
+                + smell.name + "</a>");
     }
     return list.join("");
 }
