@@ -4,8 +4,8 @@ $(document).ready(function() {
 
 $("#search-button").click(function() {
     var query = $("#search-input").val();
-    search(query, function(items) {
-        var list = makeList(items);
+    search(query, function(results) {
+        var list = makeList(results);
         $("#smells").empty();
         $("<div/>", {
             html: list
