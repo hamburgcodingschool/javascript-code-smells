@@ -1,11 +1,13 @@
 QUnit.test("Search for 'class'", function(assert) {
     var done = assert.async();
     search("class", function(items) {
-        assert.equal(items[0].name, "Large Class", "1");
-        assert.equal(items[1].name, "Lazy Class", "2");
-        assert.equal(items[2].name, "Alternative Classes with Different Interfaces", "3");
-        assert.equal(items[3].name, "Incomplete Library Class", "4");
-        assert.equal(items[4].name, "Data Class", "5");
+        assert.equal(items[0].name, "Large Class", "The name of the first result should be 'Large Class'");
+        assert.equal(items[1].name, "Lazy Class", "The name of the second result should be 'Lazy Class'");
+        assert.equal(items[2].name, "Alternative Classes with Different Interfaces",
+                "The name of the third result should be 'Alternative Classes with Different Interfaces'");
+        assert.equal(items[3].name, "Incomplete Library Class",
+                "The name of the fourth result should be 'Incomplete Library Class'");
+        assert.equal(items[4].name, "Data Class", "The name of the fifth result should be 'Data Class'");
         done();
     });
 });
