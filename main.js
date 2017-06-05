@@ -2,32 +2,65 @@ $(document).ready(function() {
     $("#introduction").load("introduction.txt");
 });
 
-console.log("Large Class".search("Class"));
-
 $("#search-button").click(function() {
     var search_text = $("#search-input").val();
-
-    var data = $.getJSON("code-smells.json", function(data) {
-        var items = [];
-      $.each(data, function(i, value) {
-        var name = value.name;
-        console.log("name: " + name);
-        console.log("input: " + search_text);
-        var indexOf = name.toLowerCase().search(search_text.toLowerCase());
-        console.log(indexOf);
-        if (name.toLowerCase().search(search_text.toLowerCase()) >= 0) {
-            items.push( "<a id='smell-" + i + "' href='code-smells.html?smell=" + value.id + "' class='list-group-item'>" + name + "</li>" );
-            console.log("match: " + name);
-        }
-      });
-      console.log(items);
-      $("#smells").empty();
-      $( "<div/>", {
-          "class": "my-new-list",
-          html: items.join( "" )
+    console.log(search_text);
+//    var data = $.getJSON("code-smells.json", function(data) {
+//        var items = [];
+//      $.each(data, function(i, value) {
+//        var name = value.name;
+//        console.log("name: " + name);
+//        console.log("input: " + search_text);
+//        var indexOf = name.toLowerCase().search(search_text.toLowerCase());
+//        console.log(indexOf);
+//        if (name.toLowerCase().search(search_text.toLowerCase()) >= 0) {
+//            items.push( "<a id='smell-" + i + "' href='code-smells.html?smell=" + value.id + "' class='list-group-item'>" + name + "</li>" );
+//            console.log("match: " + name);
+//        }
+//      });
+//    });
+    search(search_text, function(items) {
+        console.log("Items: " + items);
+        var list = makeList(items);
+        console.log("List: " + list);
+        $("#smells").empty();
+        $( "<div/>", {
+            "class": "my-new-list",
+            html: list
         }).appendTo( "#smells" );
     });
+
 });
+
+function search(search_text, callback) {
+    $.getJSON("code-smells.json", function(data) {
+        var items = [];
+        console.log("Items: " + items)
+        $.each(data, function(i, value) {
+            var value = data[i];
+            var name = value.name;
+            console.log("name: " + name);
+            console.log("input: " + search_text);
+            var indexOf = name.toLowerCase().search(search_text.toLowerCase());
+            console.log(indexOf);
+            if (name.toLowerCase().search(search_text.toLowerCase()) >= 0) {
+//                items.push( "<a id='smell-" + i + "' href='code-smells.html?smell=" + value.id + "' class='list-group-item'>" + name + "</li>" );
+                items.push(value);
+                console.log("match: " + name);
+            }
+        });
+        callback(items);
+    });
+}
+
+function makeList(items) {
+    var list = [];
+    for (var i = 0; i < items.length; i++) {
+        var value = items[i];
+        list.push( "<a id='smell-" + i + "' href='code-smells.html?smell=" + value.id + "' class='list-group-item'>" + value.name + "</li>" );
+    }
+    return list.join("");
+}
 
 $(document).ready(function() {
     var smell = getUrlVars()["smell"];
