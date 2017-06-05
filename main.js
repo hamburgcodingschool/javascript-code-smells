@@ -23,10 +23,10 @@ function search(query, callback) {
     });
 }
 
-function getMatchingItems(query, value, items) {
-    var name = value.name;
+function getMatchingItems(query, smell, items) {
+    var name = smell.name;
     if (name.toLowerCase().search(query.toLowerCase()) >= 0) {
-        items.push(value);
+        items.push(smell);
     }
 }
 
