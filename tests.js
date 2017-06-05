@@ -1,7 +1,3 @@
-QUnit.test("hello test", function(assert) {
-    assert.ok(1 == "1", "Passed!");
-});
-
 QUnit.test("Search for 'class'", function(assert) {
     var done = assert.async();
     search("class", function(items) {
