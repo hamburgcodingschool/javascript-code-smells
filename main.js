@@ -15,7 +15,6 @@ $("#search-button").click(function() {
             html: list
         }).appendTo( "#smells" );
     });
-
 });
 
 function search(search_text, callback) {
