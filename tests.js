@@ -22,3 +22,16 @@ QUnit.test("Create an <a> tag with makeList()", function(assert) {
     var list = makeList(items);
     assert.equal(list, "<a id='smell-0' href='code-smells.html?smell=duplicated-code' class='list-group-item'>Duplicated Code</a>");
 });
+
+QUnit.test("Create multiple <a> tags with makeList()", function(assert) {
+    var items = [];
+    items.push({ id: "duplicated-code", name: "Duplicated Code" },
+            { id: "large-class", name: "Large Class" },
+            { id: "data-clumps", name: "Data Clumps" });
+    var expected =
+            "<a id='smell-0' href='code-smells.html?smell=duplicated-code' class='list-group-item'>Duplicated Code</a>"
+            + "<a id='smell-1' href='code-smells.html?smell=large-class' class='list-group-item'>Large Class</a>"
+            + "<a id='smell-2' href='code-smells.html?smell=data-clumps' class='list-group-item'>Data Clumps</a>";
+    var list = makeList(items);
+    assert.equal(list, expected);
+});
