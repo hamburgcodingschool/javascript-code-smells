@@ -33,7 +33,7 @@ function makeList(items) {
     for (var i = 0; i < items.length; i++) {
         var value = items[i];
         list.push("<a id='smell-" + i + "' href='code-smells.html?smell=" + value.id + "' class='list-group-item'>"
-                + value.name + "</li>");
+                + value.name + "</a>");
     }
     return list.join("");
 }
