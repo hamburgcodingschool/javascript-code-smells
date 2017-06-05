@@ -17,7 +17,7 @@ function search(search_text, callback) {
     $.getJSON("code-smells.json", function(data) {
         var items = [];
         $.each(data, function(i, value) {
-            getMatchingItems(search_text, data[i], items);
+            getMatchingItems(search_text, value, items);
         });
         callback(items);
     });
