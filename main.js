@@ -5,20 +5,6 @@ $(document).ready(function() {
 $("#search-button").click(function() {
     var search_text = $("#search-input").val();
     console.log(search_text);
-//    var data = $.getJSON("code-smells.json", function(data) {
-//        var items = [];
-//      $.each(data, function(i, value) {
-//        var name = value.name;
-//        console.log("name: " + name);
-//        console.log("input: " + search_text);
-//        var indexOf = name.toLowerCase().search(search_text.toLowerCase());
-//        console.log(indexOf);
-//        if (name.toLowerCase().search(search_text.toLowerCase()) >= 0) {
-//            items.push( "<a id='smell-" + i + "' href='code-smells.html?smell=" + value.id + "' class='list-group-item'>" + name + "</li>" );
-//            console.log("match: " + name);
-//        }
-//      });
-//    });
     search(search_text, function(items) {
         console.log("Items: " + items);
         var list = makeList(items);
@@ -44,7 +30,6 @@ function search(search_text, callback) {
             var indexOf = name.toLowerCase().search(search_text.toLowerCase());
             console.log(indexOf);
             if (name.toLowerCase().search(search_text.toLowerCase()) >= 0) {
-//                items.push( "<a id='smell-" + i + "' href='code-smells.html?smell=" + value.id + "' class='list-group-item'>" + name + "</li>" );
                 items.push(value);
                 console.log("match: " + name);
             }
@@ -77,7 +62,6 @@ $(document).ready(function() {
     $("#content").load(page);
 });
 
-// Read the page's GET URL variables and return them as an associative array.
 function getUrlVars()
 {
     var vars = [], hash;
