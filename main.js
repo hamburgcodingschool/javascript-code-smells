@@ -10,10 +10,10 @@ $("#search-button").click(function() {
         var list = makeList(items);
         console.log("List: " + list);
         $("#smells").empty();
-        $( "<div/>", {
+        $("<div/>", {
             "class": "my-new-list",
             html: list
-        }).appendTo( "#smells" );
+        }).appendTo("#smells");
     });
 });
 
@@ -41,7 +41,8 @@ function makeList(items) {
     var list = [];
     for (var i = 0; i < items.length; i++) {
         var value = items[i];
-        list.push( "<a id='smell-" + i + "' href='code-smells.html?smell=" + value.id + "' class='list-group-item'>" + value.name + "</li>" );
+        list.push("<a id='smell-" + i + "' href='code-smells.html?smell=" + value.id + "' class='list-group-item'>"
+                + value.name + "</li>");
     }
     return list.join("");
 }
@@ -61,12 +62,10 @@ $(document).ready(function() {
     $("#content").load(page);
 });
 
-function getUrlVars()
-{
+function getUrlVars() {
     var vars = [], hash;
     var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
-    for(var i = 0; i < hashes.length; i++)
-    {
+    for (var i = 0; i < hashes.length; i++) {
         hash = hashes[i].split('=');
         vars.push(hash[0]);
         vars[hash[0]] = hash[1];
