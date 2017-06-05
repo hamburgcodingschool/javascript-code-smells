@@ -13,6 +13,18 @@ $("#search-button").click(function() {
     });
 });
 
+$("#search-input").keyup(function(event) {
+    if (event.keyCode == 13) {
+        var query = $("#search-input").val();
+        search(query, function(results) {
+            $("#smells").empty();
+            $("<div/>", {
+                html: makeList(results)
+            }).appendTo("#smells");
+        });
+    }
+});
+
 function makeList(smells) {
     var list = "";
     for (var i = 0; i < smells.length; i++) {
