@@ -25,7 +25,6 @@ function search(search_text, callback) {
 
 function getMatchingItems(search_text, value, items) {
     var name = value.name;
-    var indexOf = name.toLowerCase().search(search_text.toLowerCase());
     if (name.toLowerCase().search(search_text.toLowerCase()) >= 0) {
         items.push(value);
     }
